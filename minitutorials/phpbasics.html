@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" href="http://netdenizen.org/webdesign/screen.css" type="text/css" media="screen" />
+  <title>PHP Basics</title>
+</head>
+<body>
+<h1>PHP Scripting Basics</h1>
+<p>
+  PHP files are just like the HTML files you have been writing, with the single exception that 
+  the server actually looks closely at their contents, and makes changes before sending the file
+  off to the web browser. So, for example, you could have a basic PHP page that looks just like
+  this:
+</p>
+<pre><code>
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+&lt;html xmlns="http://www.w3.org/1999/xhtml">
+&lt;head>
+  &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  &lt;link rel="stylesheet" href="http://netdenizen.org/webdesign/screen.css" type="text/css" media="screen" />
+  &lt;title>Empty PHP File&lt;/title>
+&lt;/head>
+&lt;body>
+  &lt;p>Hello, web browser!&lt;/p>
+&lt;/body>
+&lt;/html>
+</code></pre>
+<p>
+  If you create this file and name it <a href="./test.html"><code>test.html</code></a> 
+  and load it in your browser, it should
+  just display the text, &ldquo;Hello, web browser!&rdquo;.  If you save this file as 
+  <code>test.php</code> and load it in your browser again (don't forget 
+  to type in the URL with 
+  the php at the end!) it will look exactly the same. So what's the big deal?
+</p>
+<p>
+  The big deal is that when the file is saved with the <code>.php</code> at the end, the web server 
+  will allow you to write programs inside the page. For example:
+</p>
+<pre><code>
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+&lt;html xmlns="http://www.w3.org/1999/xhtml">
+&lt;head>
+  &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  &lt;link rel="stylesheet" href="http://netdenizen.org/webdesign/screen.css" type="text/css" media="screen" />
+  &lt;title>Empty PHP File&lt;/title>
+&lt;/head>
+&lt;body>
+  &lt;p>
+    &lt;?php print("Hello, web browser!\n"); ?>
+  &lt;/p>
+&lt;/body>
+&lt;/html>
+</code></pre>
+
+<p>
+  You can see an example of the preceding file <a href="./test.php">with the modification</a>. 
+  Notice that instead of just putting the text: <em>Hello, web browser!</em> in the HTML directly
+  it is set inside a special pair of tags: <strong><code>&lt;?php</code></strong> and 
+  <strong><code>?></code></strong>. The
+  text isn't just placed inside, either. It is presented inside a function call: <code>
+  print("hello, web browser!");</code>. Now try looking at the source of the page. Does it look 
+  like the original example? Where did the extra php tag and print stuff go?
+</p>
+<p>
+  When the web server sees the matching <strong><code>&lt;?php</code></strong> and 
+  <strong><code>?></code></strong> tags, it 
+  signifies PHP code. The server will execute this code as if it were a computer program and 
+  if there are any <code>print</code> function calls, it will emit new text into the file, as if
+  it were always there. In this way, the web server can generate a file "on the fly" that looks
+  exactly like an HTML file that you created using Textwrangler.
+</p>
+
+<h2>Now It's Your Turn</h2>
+<p>
+  Create your own version of the file <code>test.php</code> and try the following additional
+  pieces of code inside the <code>&lt;?php</code> and <code>?></code>:
+</p>
+
+<pre><code>
+&lt;?php
+  $greeting = "courageous web design student";
+  print ("Hello, $greeting!\n");
+?>
+</code></pre>
+
+<p>
+  Try saving this to your desktop first, and drag it into your web browser. If should display
+  all of the ugly PHP code because there was no web <em>server</em> to process the code. Now
+  upload it to the web server and load the URL into your browser. It should display a message
+  like this:
+</p>
+<pre><code>Hello, courageous web design student!</code></pre>
+<p>
+  Note that the <code>\n</code> in the printed string tells the web server to insert a "new line"
+  in the text that it emits. This is the same as when you press the return key on your keyboard
+  while you are editing an HTML file.
+</p>
+<p>
+  Variables in PHP are always named with a dollar sign at the start (e.g. $greeting). You can
+  use these variables inside of quoted strings (like this example), which is a pretty neat trick.
+</p>
+<p>
+  PHP is also very good at doing basic mathematics. Try something like this:
+</p>
+
+<pre><code>
+&lt;?php
+  $greeting = "courageous web design student";
+  $pi = 3.141592654;
+  $diameter = 35.0;
+  $area = $pi * pow(($diameter / 2.0),2); /* pow raises one number to the power of another */
+  print ("&lt;p>Hello, $greeting!&lt;/p>\n");
+  print ("&lt;p>The area of a circle that is $diameter inches across is $area square inches!&lt;/p>\n"); 
+?>
+</code></pre>
+
+<p>
+  This was just a super duper quickie intro to PHP scripting. If you would like to learn more, 
+  there are many excellent tutorials on the Internet. 
+</p>
+
+<p>
+  Examine the <a href="view-source:http://www.netdenizen.org/webdesign/minitutorials/phpbasics.html">
+  source HTML</a> used by this web page (Firefox or Chrome).
+</p>
+
+<p>
+  <a href="http://validator.w3.org/check?uri=referer"><img
+    src="http://www.w3.org/Icons/valid-xhtml11" alt="Valid XHTML 1.1" height="31" width="88" /></a>
+</p>
+</body>
+</html>

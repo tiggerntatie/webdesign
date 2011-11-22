@@ -1,0 +1,65 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+  background-image:url(pictures/htmlshot.png);
+  background-repeat: no-repeat;
+  background-position:top left;
+  background-color: #fff;
+  font-family: georgia, times, serif;
+  font-size: 1.1em;
+}
+
+h1, h2, h3, h4 {
+  color: #f00;
+}
+
+h1 {
+  font-family: helvetica, sans-serif;
+  font-size: 2em;
+  padding-top: 4em;
+}
+
+h2, h3 {
+  font-family: helvetica, sans-serif;
+  font-weight: bold;
+  font-style: italic;
+}
+
+h3 {
+  font-size: 1.3em;
+}
+
+h2 {
+  font-size: 1.6em
+}
+
+ol li {
+  padding-bottom: 0.5em;
+}
+
+table {
+  border-spacing: 1em;
+  background-image:url(pictures/htmlshot.png);
+  background-repeat: no-repeat;
+  background-position:top left;
+  background-color: #fff;
+}
+
+table caption {
+  font-size: 1.3em;
+  font-family: helvetica, sans-serif;
+}
+
+table td {
+  background: #eee;
+  font-family: courier;
+  font-weight: bold;
+  padding: 0.5em;
+  border: 1px solid #00f;
+}
+
+table th {
+  font-family: helvetica, sans-serif;
+  font-weight: bold;
+}

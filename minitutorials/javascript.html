@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" href="http://netdenizen.org/webdesign/screen.css" type="text/css" media="screen" />
+  <title>Javascript</title>
+</head>
+<body>
+<h1>Add Intelligence with Javascript</h1>
+<p>
+  If you follow the advice in the mini-tutorial on 
+  <a href="http://www.netdenizen.org/webdesign/minitutorials/forms.html">
+  HTML forms</a> and <a href="http://www.netdenizen.org/webdesign/minitutorials/stylingforms.html">
+  styling them</a> then you should end up with a reasonably attractive web page form.
+</p>
+<p>
+  The example in the <a href="http://www.netdenizen.org/webdesign/challenge6.html"> Challenge 6
+  assignment</a> has a couple of buttons at the end of the page that you use to transfer values
+  from the form to the story paragraph. The HTML for those looks like this:
+</p>
+<pre><code>
+&lt;input type='button' value='Show Story' onclick='javascript:challenge6.transferWords("madlibs");' class="input" />
+</code></pre>
+<p>
+  and
+</p>
+<pre><code>
+&lt;input type='button' value='Hide Story' onclick='javascript:challenge6.hideStory();' class="input" />
+</code></pre>
+<p>
+  In both cases, the <code>value</code> attribute is used to define the text that appears on the 
+  button. The <code>onclick</code> attribute tells your browser what it should do when someone
+  clicks on the button.
+</p>
+<p>
+  When someone presses the 'Show Story' button, the browser will activate the Javascript interpreter
+  that is built into the web browser and use it to execute a function called 
+  <code>challenge6.transferWords</code>, using the argument <code>"madlibs"</code>. If you have
+  copied the code I have provided up to this point, you will find that this button doesn't seem
+  to do anything at all. Now we will change that!
+</p>
+
+<h2>Link in Some Javascript Code</h2>
+<p>
+  In the beginning you wrote web pages using only HTML. Then you learned how to style the pages
+  by linking your HTML document to a CSS document. Now you need to link your HTML document
+  to a new kind of document that contains Javascript computer software. To do that, add a line
+  like this inside the <code>&lt;head></code> block of your HTML page:
+</p>
+<pre><code>
+&lt;script type="text/javascript" src="challenge06.js">&lt;/script>
+</code></pre>
+<p>
+  This will make your web browser load the file <code>challenge06.js</code> alongside the HTML and
+  CSS documents. The contents of this Javascript aren't displayed in your browser, and they don't
+  have an immediate effect on the appearance of your page.
+</p>
+<h2>Create your Javascript File</h2>
+<p>
+  For your <code>challenge06.js</code> you should create a new, empty file in your <code>public</code>
+  directory on the server and copy/paste the entire contents of 
+  <a href="http://www.netdenizen.org/webdesign/challenge6.js">my Javascript file</a> in to it. Save
+  the file to the web server.
+</p>
+
+<h2>Tweak your Javascript</h2>
+<p>
+  Look at your Javascript code. Javascript code is a set of instructions that your web browser can
+  follow to do <em>something useful</em>. Most big web pages on the Internet use at least a little
+  Javascript to make them more user friendly or powerful. Many of the fancy navigation features
+  that you find on the web are created "on the fly" using Javascript. Google's Gmail and Docs 
+  sites rely very heavily on Javascript: the pages you see on the screen are defined with HTML but
+  Javascript makes them move and react to you. Javascript is a very powerful and fast programming
+  language and we could devote an entire semester long course only to learning the basics of writing
+  Javascript software. You will learn enough to incorporate existing Javascript code into your
+  web page. This is very representative of the way that web designers actually use Javascript in
+  their daily work.
+</p>
+<p>
+  In your newly created Javascript file, you will find near the bottom of the file a section that
+  looks like this:
+</p>
+<pre><code>
+  /* transferWords moves the form content to the following paragraph, field by field */
+  this.transferWords = function(story_id) {
+    this.addWordbyID("first-name", "first-name-dest");
+    this.addWordbyID("birthplace", "birthplace-dest");
+    this.addWordbyID("birth-month", "birth-month-dest");
+    this.addRadioButtonbyName("birth-decade", "birth-decade-dest");
+    this.addWordbyID("secret", "secret-dest");
+    this.addCheckBoxbyName("leaning", "leaning-dest");
+    this.addWordbyID("world-view", "world-view-dest");
+    /* display the story */
+    this.storyID = story_id;
+    document.getElementById(this.storyID).style.display = "block";
+  }
+</code></pre>
+<p>
+  This block of Javascript code was written for the sole purpose of transferring data from the
+  Challenge 6 assignment example form controls to the "blanks" in the story paragraph that 
+  follows it. Since it is written to work only with that web page, you will probably need to 
+  modify this piece of Javascript code to make it work on your page.
+</p>
+<p>
+  Most form controls are transferred by executing code like this:
+</p>
+<pre><code>
+this.addWordbyID("first-name", "first-name-dest");
+</code></pre>
+<p>
+  This example transfers the data found in the control with an <code>id="first-name"</code> to 
+  a <code>&lt;span></code> element with <code>id="first-name-dest"</code>. Some of the other
+  lines transfer data from radio buttons and check boxes, so make sure you use the right type
+  of line for each control in your form.
+</p>
+<p>
+  You should rename the ids in your own work to make them more meaningful for your form.
+</p>
+<p>
+  The last line of this code snippet actually changes the CSS <code>display</code> attribute
+  for the paragraph to "block", meaning that the paragraph will be displayed as an HTML 
+  block. 
+</p>  
+
+<h2>What is an ID Anyway?</h2>
+<p>
+  Up until now you have specified your content by using the <code>class='classname'</code> 
+  attribute. Class names can be assigned to as many different elements as you want. On the other
+  hand, the <code>id='idname'</code> attribute is used to assign a <em>unique</em> identification
+  to a <em>single</em> element in your web page. So the Javascript code examines the HTML
+  itself to locate the unique controls, retrieves the control values and transfers them to the 
+  <em>unique</em> <code>&lt;span&gt;</code> elements in the story paragraph.  
+</p>
+<p>
+  If you want to refer to an element with a <code>id="example"</code> in your CSS so it can 
+  be styled in a unique way, then you can use the # character before the id. Example:
+</p>
+<pre><code>
+div#madlibs {
+  display: none;
+}
+</code></pre>
+<p>
+  This rule apples to the <strong>One Unique</strong> <code>&lt;div></code> element that is 
+  assigned an <code>id="madlibs"</code>.
+</p>
+  
+
+<h2>Next Steps</h2>
+<p>
+  If you have completed the challenge and have nothing to do (unlikely!) I would recommend 
+  Googling around for interesting Javascript code that is freely available and designed to do
+  something cool (for example, drop down navigation menus, photo gallery, etc.). You can learn
+  a lot by examining code that other people have written and figuring out how to incorporate it in 
+  your own web pages.
+</p>
+
+<p>
+  Examine the <a href="view-source:http://www.netdenizen.org/webdesign/minitutorials/stylingforms.html">
+  source HTML</a> used by this web page (Firefox or Chrome).
+</p>
+
+<p>
+  <a href="http://validator.w3.org/check?uri=referer"><img
+    src="http://www.w3.org/Icons/valid-xhtml11" alt="Valid XHTML 1.1" height="31" width="88" /></a>
+</p>
+</body>
+</html>

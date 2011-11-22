@@ -1,0 +1,50 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+  font-family: georgia, serif;
+  font-size: 1em;
+}
+
+h1 {
+  font-family: verdana, sans-serif;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 2em;
+}
+
+div.hickory {
+  background-color: #eee;
+  padding: 0.4em;
+  margin: 0.2em;
+  width: 20%;
+  float: left;
+}
+
+div.dickory {
+  background-color: #fdd;
+  padding: 0.4em;
+  margin: 0.2em;
+  border: 2px dotted #000;
+  width: 20%;
+  float: left;
+}
+
+div.dock {
+  background-color: #dfd;
+  color: #00f;
+  padding: 0.4em;
+  margin: 0.2em;
+  border: 2px dashed #000;
+  width: 20%;
+  float: right;
+}
+
+div.themouse {
+  background-color: #dfd;
+  color: #00f;
+  padding: 0.4em;
+  margin: 0.2em;
+  border: 2px solid #0f0;
+  clear: both;
+}

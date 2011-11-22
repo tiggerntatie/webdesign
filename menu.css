@@ -1,0 +1,67 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+/* DROPDOWN NAVIGATION MODIFIED FROM : http://csswizardry.com/2011/02/creating-a-pure-css-dropdown-menu/ */
+
+/*--- NAV ---*/
+
+ul.sitenavigation{
+  list-style:none;
+  float:left; 
+  width:100%; 
+  position:relative;
+  z-index:5;
+  background-color: black; /* transparent if this line is omitted! */
+}
+ul.sitenavigation li{
+  float:left;
+  position:relative;
+  background-color: red;  /* transparent if this line is omitted! */
+}
+ul.sitenavigation span, .sitenavigation a{  /* Style the menu blocks here: font, sizes, spacing, etc. */
+  display:block;
+  margin-right:0.6em;
+  padding:0.3em;
+  padding-right:0.6em;
+  padding-left:0.6em;
+  font-family: verdana, sans-serif;
+  font-size: 1em;
+  color:#fff;
+  background:#333;
+  text-decoration:none;
+  border:solid black 0px;
+}
+
+/*--- DROPDOWN ---*/
+ul.sitenavigation ul{
+  padding:0;
+  margin:0;
+  list-style:none;
+  position:absolute;
+  background-color:blue;  /* transparent if omitted */
+  left:-9999px; /* Hide off-screen when not needed (this is more accessible than display:none;) */
+}
+ul.sitenavigation ul li{
+  margin:0.2em; /* spacing around the dropdown items */
+  float:none;  
+  white-space:nowrap;
+}
+ul.sitenavigation li:hover ul{ /* Display the dropdown on hover */
+  left:0; /* Bring back on-screen when needed - don't remove this!*/
+}
+ul.sitenavigation li:hover a{ /* What changes when you hover over a link */
+  background:#f00;
+  text-decoration:underline; 
+}
+ul.sitenavigation li:hover ul a{ /* These styles should undo the ones in "#nav li:hover a" by replicating styles in "#nav a"*/
+  text-decoration:none;
+  background:#333; 
+}
+ul.sitenavigation li:hover ul li a:hover{ /* This should match the styles in "#nav li:hover a" */
+  background:#f00;
+  text-decoration:underline;
+}
+
+/*--- END OF DROPDOWN MENU STYLES ---*/
+

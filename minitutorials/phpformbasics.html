@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" href="http://netdenizen.org/webdesign/screen.css" type="text/css" media="screen" />
+  <title>PHP Form Basics</title>
+</head>
+<body>
+<h1>PHP Form Basics</h1>
+<p>
+  In the minitutorial on <a href="./phpbasics.html">PHP Basics</a> you learned how to write a
+  web page that has PHP scripting embedded in it. If you didn't actually try out the examples
+  in that tutorial <strong>then I urge you to go back to it, read it, and try the examples</strong>.
+</p>
+<p>
+  In this tutorial we will be looking at how your form is written to activate your PHP file, and
+  exactly how the information in the form is passed in to the PHP file.
+</p>
+<h2>Posting data to your PHP script</h2>
+<p>
+  In this and the previous challenge, you have enclosed all of your form controls inside of a
+  <code>&lt;form></code> element. There was a lot additional stuff inside that element that you
+  haven't had to pay attention to before:
+</p>
+<pre><code>
+&lt;form id="visitor-info-form" action="http://www.netdenizen.org/webdesign/challenge8.php" method="post">
+</code></pre>
+<p>
+  The <code>action</code> attribute here lists a web address of the web page that will receive
+  the posted form. When you write your own form and PHP file, <strong>you must change this URL to 
+  point to your PHP file</strong>. If you forget and reuse the line from the challenge assignment 
+  then your form will always be sent to the challenge8.php that was written for the assignment!
+</p>
+<p>
+  All of the input controls in your form can be written pretty much the way they were for the last
+  challenge, with the exception of the push button:
+</p>
+<pre><code>
+&lt;input type='submit' value='Send' name='submit' />
+</code></pre>
+<p>
+  Unlike the button in challenge 6, this button does not include an <code>onclick</code> 
+  attribute. Instead, the default behavior of the button is to "submit" the contents of the entire
+  form to the web address listed in the <code>action</code> attribute of the <code>&lt;form></code>
+  element. The additional attributes in this <code>&lt;input></code> element are <code>value</code>,
+  which sets the text that appears in the button image and <code>name</code> which determines
+  how this button will be identified in the form data that are sent to the PHP page.
+</p>
+<h2>Receiving posted data at the web server</h2>
+<p>
+  As you recall from the <a href="./phpbasics.html">PHP Basics</a> page, you tell the web server
+  that you want to insert scripting code in your PHP file by using the <code>&lt;?php</code>
+  and <code>?></code> to begin and end the code section. Form entries are received in the
+  PHP script in the form of a special array variable that looks like this (for example): 
+  <code>$_POST['birth-month']</code>. In this example, the data originated in a form input element 
+  that had an attrbute: <code>name='birth-month'</code>.
+</p>
+<p>
+  I recommend converting all of the variables like: <code>$_POST['birth-month']</code> to
+  ordinary variables, like this: <code>$birthmonth</code>. For example:
+</p>
+<pre><code>
+&lt;?php
+if (isset($_POST['submit'])) {
+  /* Include some script code for setting variables equal to the form contents */
+  $name = mysql_real_escape_string($_POST['first-name']);
+  $birthplace = mysql_real_escape_string($_POST['birthplace']);
+  $firstnumber = (float) $_POST['number1'];
+  $secondnumber = (float) $_POST['number2'];
+  $birthmonth = $_POST['birth-month'];
+  $birthdecade = $_POST['birth-decade'];
+  $comments = mysql_real_escape_string($_POST['comments']);
+}
+?>
+</code></pre>
+<p>
+  Let's look at each of these lines individually:
+</p>
+<pre><code>
+if (isset($_POST['submit'])) {
+</code></pre>
+<p>
+  This checks to see if one of the pieces of information coming from the other page is data from
+  the submit button itself. If the server arrived at this page because the user typed it in to 
+  the URL bar in the browser, then there will be no form data included. This line checks to see 
+  if the page is being retrieved because someone pressed the submit button. If so, the following
+  code (inside the {} brackets) will be executed.
+</p>
+<pre><code>
+  $name = mysql_real_escape_string($_POST['first-name']);
+</code></pre>
+<p>
+  This does three things. First, the data are retrieved with <code>$_POST['first-name']</code>.
+  Next, it is modified to make it safe to use in a database query with 
+  <code>mysql_real_escape_string()</code>. Finally, the result is saved to a variable called
+  <code>$name</code>. It is "good practice" to save all of the form data that you are interested
+  in using to variables like this.
+</p>
+<pre><code>
+  $firstnumber = (float) $_POST['number1'];
+</code></pre>
+<p>
+  This retrieves a form field called <code>number1</code> and converts it from text to a 
+  floating point number using a cast: <code>(float)</code>. Lastly the numeric version of the text
+  is stored in a variable called <code>$firstnumber</code>.
+</p>
+<p> 
+  The <code>$birthmonth</code> and <code>$birthdecade</code> variables are not protected with
+  the <code>mysql_real_escape_string</code> call because the values are set by the HTML itself.
+  If you're not sure, you can safely use <code>mysql_real_escape_string</code> on every piece
+  of data received by the PHP form.
+</p>
+<h2>Other processing you can do</h2>
+<p>
+  You can do other things than just regurgitation of submitted data. PHP is a useful math tool 
+  because it can also perform mathematical operations on the data. For example:
+</p>
+<pre><code>
+&lt;?php
+
+  if (isset($_POST['submit'])) {
+    $product = $firstnumber * $secondnumber;
+    print("The product of your numbers is $product.");
+  }
+?>
+</code></pre>
+<p>
+  This code will take the two numbers submitted with the form, multiply them together and 
+  print the result directly to the web page where the visitor will see it.
+</p>
+
+<p>
+  Examine the <a href="view-source:http://www.netdenizen.org/webdesign/minitutorials/phpformbasics.html">
+  source HTML</a> used by this web page (Firefox or Chrome).
+</p>
+
+<p>
+  <a href="http://validator.w3.org/check?uri=referer"><img
+    src="http://www.w3.org/Icons/valid-xhtml11" alt="Valid XHTML 1.1" height="31" width="88" /></a>
+</p>
+</body>
+</html>

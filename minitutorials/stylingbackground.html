@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" href="stylingbackground.css" type="text/css" media="screen" />
+  <title>Styling the Background with CSS</title>
+</head>
+<body>
+<h1>Styling the Background with CSS</h1>
+<p>
+  Every displayable element on an HTML page has a background. By default, the background is simply
+  white. Many interesting style effects are accomplished by either changing the background color,
+  or by using an image for the background, with or without repetition. Often an image is combined
+  with a background color in such a way that the edge of the image blends seamlessly with the 
+  color, giving the appearance of a much larger background image. The table below lists some of
+  the things you can dow with backgrounds.
+</p>
+<p>
+  Don't forget to <strong>experiment</strong> with changing the background style of a variety 
+  of elements. And don't forget to examine the HTML and CSS of web pages you admire!
+</p>
+<h2>CSS Attributes For Backgrounds</h2>
+<table>
+  <caption></caption>
+  <tr>
+    <th class="attribute">attribute</th> 
+    <th class="example">example value</th> 
+    <th class="explain">used for...</th>
+  </tr>
+  <tr>
+    <td><code>background</code></td>
+    <td><code>#eee url(background.png) repeat-x scroll;</code></td>
+    <td>Specify a combination of background attributes at one time: color, background image, 
+      repetition and attachment. These qualities can also be set individually (see below).
+    </td>
+  </tr>
+  <tr>
+    <td><code>background-color</code></td> 
+    <td><code>#353;</code></td> 
+    <td>Specify the background color using RGB code like #353 (short) or #3355ff (long).
+    </td>
+  </tr>
+  <tr>
+    <td><code>background-image</code></td>
+    <td><code>url(background.png);</code></td>
+    <td>Specify the name of an image to use as the background.</td>
+  </tr>
+  <tr>
+    <td><code>background-repeat</code></td>
+    <td><code>no-repeat;</code></td>
+    <td>Images can be repeated vertically and horizontally (<code>repeat</code>), just 
+      vertically (<code>repeat-y</code>), horizontally (<code>repeat-x</code>), or not at 
+      all (<code>no-repeat</code>).
+    </td>
+  </tr>
+  <tr>
+    <td><code>background-attachment</code></td>
+    <td><code>scroll;</code></td>
+    <td>Images in the background can scroll with the rest of the content (<code>scroll</code>),
+     or be fixed in the browser window (<code>fixed</code>).
+    </td>
+  </tr>
+  <tr>
+    <td><code>background-position</code></td>
+    <td><code>top right;</code></td>
+    <td>Placement of the background image can be aligned at the <code>top</code>, <code>
+      right</code>, <code>bottom</code>, <code>left</code>, <code>center</code> or a combination
+      of these. You can also specify distance from the left and top margin.
+    </td>
+  </tr>
+</table>
+<p>
+  There are a lot of interesting effects that you can achieve with background styling. See
+  the <a href="http://dev.opera.com/articles/view/31-css-background-images/">Opera tutorial on 
+  background styling</a> for more ideas.
+</p>
+
+
+  <p>
+    Examine the <a href="view-source:http://www.netdenizen.org/webdesign/minitutorials/stylingbackground.html">
+    source HTML</a> used by this web page (Firefox or Chrome).
+  </p>
+  <p>
+    Examine the <a href="stylingbackground.css">CSS </a> used by this web page.
+  </p>
+
+<p>
+  <a href="http://validator.w3.org/check?uri=referer"><img
+    src="http://www.w3.org/Icons/valid-xhtml11" alt="Valid XHTML 1.1" height="31" width="88" /></a>
+</p>
+</body>
+</html>

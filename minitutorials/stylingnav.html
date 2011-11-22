@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" href="stylingnav.css" type="text/css" media="screen" />
+  <title>Styling Navigation Links with CSS</title>
+</head>
+<body>
+<h1>Styling Navigation Links with CSS</h1>
+<p>
+  Most web sites or pages have a list of important links (<code>&lt;a&gt;</code> tags) that help the reader
+  find other pages on the site. Since it is merely a list of links, the preferred method of
+  making this navigation list is with an HTML list such as <code>&lt;ul&gt;</code>. A navigation
+  list like this might look something like:
+</p>
+<pre><code>
+&lt;ul>
+  &lt;li>&lt;a href="http://www.netdenizen.org/webdesign/index.html">Web Design Home&lt;/a>&lt;/li>
+  &lt;li>&lt;a href="http://www.netdenizen.org/webdesign/calendar.html">Assignment Calendar&lt;/a>&lt;/li>
+  &lt;li>&lt;a href="http://www.netdenizen.org/webdesign/studentwork">Student Work&lt;/a>&lt;/li>
+&lt;/ul>
+</code></pre>
+<p>
+  Which looks like this:
+</p>
+<ul>
+  <li><a href="http://www.netdenizen.org/webdesign/index.html">Web Design Home</a></li>
+  <li><a href="http://www.netdenizen.org/webdesign/calendar.html">Assignment Calendar</a></li>
+  <li><a href="http://www.netdenizen.org/webdesign/studentwork">Student Work</a></li>
+</ul>
+<p>
+  This gets the job done, but it looks awful. That is where CSS comes to the rescue!
+</p>
+<h2>CSS Attributes For Styling Lists of Links</h2>
+<p>
+  Instead of coding your links like the previous example, add a class attribute like this:
+</p>
+<pre><code>
+&lt;ul class='navigation'>
+  &lt;li>&lt;a href="http://www.netdenizen.org/webdesign/index.html">Web Design Home&lt;/a>&lt;/li>
+  &lt;li>&lt;a href="http://www.netdenizen.org/webdesign/calendar.html">Assignment Calendar&lt;/a>&lt;/li>
+  &lt;li>&lt;a href="http://www.netdenizen.org/webdesign/studentwork">Student Work&lt;/a>&lt;/li>
+&lt;/ul>
+</code></pre>
+<p>
+  Then the following CSS attributes could used to style <strong>only</strong> the links in a list
+  that is marked with the <code>navigation</code> class:
+</p>
+<pre><code>
+ul.navigation { 
+  margin: 0;
+  padding: 0.5em;                     /* a little space around the menu                               */
+}
+
+ul.navigation li {
+  display: inline;                    /* turns a &lt;li&gt; into an inline tag, instead of a block     */
+                                      /* this also gets rid of the bullets                             */
+  background-color: #eee;             /* set it apart visually                                         */
+  padding: 0.1em 0.3em 0.1em 0.3em;   /* give it some added bulk and size                              */
+                                      /* these sizes are for top right bottom and left, respectively   */
+}
+
+ul.navigation a {
+  text-decoration: none;              /* no underline for these links                                  */
+  font-family: verdana, sans-serif;   /* a different font to set them apart from text                  */
+}
+
+ul.navigation li:hover {
+  background-color: #ccc;             /* change the link background color when the user hovers         */
+}
+</code></pre>
+<p>
+  And the end result is this:
+</p>
+<ul class='navigation'>
+  <li><a href="http://www.netdenizen.org/webdesign/index.html">Web Design Home</a></li>
+  <li><a href="http://www.netdenizen.org/webdesign/calendar.html">Assignment Calendar</a></li>
+  <li><a href="http://www.netdenizen.org/webdesign/studentwork">Student Work</a></li>
+</ul>
+
+<p class='one'>
+  Let's talk about how this CSS works. Instead of just referring to the <code>
+  &lt;ul&gt;</code> tag in each CSS block, it refers to <code>ul.navigation</code>. This means that the
+  styling rule doesn't apply to just <strong>any</strong> <code>&lt;ul&gt;</code> tag: it refers
+  to <strong>only</strong> the <code>&lt;ul&gt;</code> tags that have their <code>class</code>
+  attribute set to <code>navigation</code>. Furthermore, when two tags are listed one after the 
+  other with a space between them (ex. <code>ul.navigation li</code>) it means that you are
+  styling every <code>&lt;li&gt;</code> tag that appears inside a <code>&lt;ul&gt;</code> tag
+  with the <code>navigation</code> class.
+</p>
+<p class='two'>
+  Go back up to the second HTML example and look at the snippet of code:
+  The <code>&lt;ul class='navigation'></code> that begins the unordered list has an additional
+  attribute, <code>class</code>, set equal to <code>navigation</code>. Now only <strong>this
+  </strong> unordered list will have the special styling. Any ordinary list will just look like
+  a simple list of bullet points.
+</p>
+<p class='three'>
+  Notice that to use the class attribute in your CSS, you have to refer to the tag, followed by
+  a period, then the name of the class that was set in the HTML. Pro-tip: don't name your classes
+  in a way that suggests the style (that is, don't name a class 'bold' or 'big-font'). Your 
+  class names should reflect the semantics of the content: it should suggest how this piece of
+  the page is meaningfully different from everything else. In the example on this page I have used
+  the class named <code>navigation</code>, which indicates the <em>purpose</em> of the list, but 
+  nothing about its <em>appearance</em>.
+</p>
+<p class='four'>
+  You can use class attributes to style other things. For example, in this document paragraphs
+  can be styled according to four different rules. See how this paragraph looks different from the
+  three that preceed it? That was done with class attribute styling. Look at the HTML and CSS
+  for this page to see the details!
+</p>
+<p>
+  Examine the <a href="view-source:http://www.netdenizen.org/webdesign/minitutorials/stylingnav.html">
+  source HTML</a> used by this web page (Firefox or Chrome).
+</p>
+<p>
+  Examine the <a href="stylingnav.css">CSS </a> used by this web page.
+</p>
+
+<p>
+  <a href="http://validator.w3.org/check?uri=referer"><img
+    src="http://www.w3.org/Icons/valid-xhtml11" alt="Valid XHTML 1.1" height="31" width="88" /></a>
+</p>
+</body>
+</html>

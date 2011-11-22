@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>How to add style with CSS</title>
+</head>
+<body>
+<h1>How to add style to your page with CSS</h1>
+<p>
+  Up to this point your web pages have been clever and witty but without any distinctive style.
+  To style your pages, you have to create a new file on the web server called a &ldquo;cascading 
+  style sheet&rdquo;. Many web sites use a single file (often named <code>style.css</code>) for
+  styling every web page on the site. This is efficient because once your visitor's web browser
+  has downloaded the style sheet for the site, it never has to download it again. This helps your
+  pages load FAST!
+</p>
+<p>
+  Using your text editor, create a new file on the server called <code>challenge03.css</code>. You
+  can set up an empty style sheet file by copying and pasting the following text into the new file:
+</p>
+<pre><code>
+@charset "utf-8";
+/* CSS Document */
+</code></pre>
+<p>
+  You must also modify your web page HTML to include a <strong>link</strong> to the style sheet. 
+  You can copy the following line of code into the <code>&lt;head&gt;...&lt;/head&gt;</code> 
+  section of your web page:
+</p>
+<pre><code>
+  &lt;link rel="stylesheet" href="challenge03.css" type="text/css" media="screen" /&gt;
+</code></pre>
+<p>
+  If you were developing a large web site with multiple pages, you would probably create a 
+  <em>single</em> style sheet (for example: <code>style.css</code>) and make every web page on 
+  your site link to it instead of making a different style sheet for every page. The reason you 
+  want a single style sheet is because your web site will probably have a common style or theme
+  for all its pages. If you decide at a later date that you want to go for a different look, you
+  need only modify the single style sheet and every page on the site will assume a new appearance!
+</p>
+<h2>Customizing your style sheet</h2>
+<p>
+  The basic idea in the style sheet is that you can override the default appearance of any tag
+  on the web page. For example, if you want all text that appears in a heading to be sans-serif
+  then you might add a section to your style sheet file that looks like this:
+</p>
+<pre><code>
+h1, h2, h3, h4 {
+  font-family: verdana, arial, sans-serif;
+}
+</code></pre>
+<p>
+  With this in your style sheet every part of your web page that has an h1, h2, h3 or h4 tag
+  will be displayed using the Verdana font. If your visitor's computer doesn't have Verdana
+  installed, then it will display with Arial. In the amazing event that even Arial isn't available
+  then the browser will use any sans-serif style font that it does have installed. 
+  <strong>NOTE</strong>: every attribute inside the curly braces is written as <strong>attribute
+  </strong> followed by colon (:), followed by one or more values, separated by commas, and ends
+  with a <strong>semi-colon</strong>. The attributes are enclosed by the curly braces.
+</p>
+<p>
+  You can change the style of <em>everything</em> in the document by customizing the <strong>body
+  </strong> tag. For example:
+</p>
+<pre><code>
+body {
+  font-family: georgia, helvetica, serif;
+  color: #f00;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 1.5em;
+  background: #00f
+}
+</code></pre>
+<p>
+  This example includes the following:
+</p>
+<ul>
+  <li>font-family: a list of typeface names, in <em>increasing</em> order of common-ness</li>
+  <li>color: colors are specified with a # followed by three hexadecimal characters. Hexadecimal
+  (hex for short) are numbers in base 16. If you were to count in hex, you would go like this: 
+  0, 1, 2, 3, 4, 5, 6, 7, 8, 9, a, b, c, d, e, f, 10, 11, 12, 13, etc. The three hex digits
+  correspond to <strong>red</strong>, <strong>green</strong> and <strong>blue</strong>. A color
+  written as #fff would be a combination of brightest red, green and blue, which would appear as white.
+  A color written as #000 has no red, green or blue and would appear black. Mix and match the digits
+  to invent your own cool colors.</li>
+  <li>font-weight: can be <strong>bold</strong> or <strong>normal</strong> or just omit the 
+  setting altogether if you want normal weight.</li>
+  <li>font-style: can be <strong>italic</strong> or <strong>normal</strong> or just omit the
+  setting altogether if you want a normal style.</li>
+  <li>font-size: specifies the default height of your text, relative to the default for the browser. 1em; 
+  would give you default-sized text. 2em; would give you text that is twice normal size. 0.5em; would 
+  give you text that is half its normal size, and so on.</li>
+  <li>background: specifies the background color of your web page.</li>
+</ul>
+<p>
+  You can specify the style of your entire document by styling the <code>body</code> tag, then
+  override that setting by specifying other styles for tags that fall inside the <code>body</code>
+  tag.
+</p>
+<p>
+  Use the style directives that I have include here as examples to get started, then try 
+  playing around with the settings to achieve a unique style for <strong>your</strong> web page!
+  Don't forget to look at the CSS files that were used to create web pages for this course. Check
+  the link for viewing CSS at the bottom of the challenge03 web page to see an example of what 
+  a CSS file might look like.
+</p>
+<p>
+  <a href="http://validator.w3.org/check?uri=referer">
+    <img src="http://www.w3.org/Icons/valid-xhtml11" alt="Valid XHTML 1.1" height="31" width="88" />
+  </a>
+</p>
+</body>
+</html>

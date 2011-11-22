@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" href="http://netdenizen.org/webdesign/screen.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="http://netdenizen.org/webdesign/minitutorials/absoluteposition.css" type="text/css" media="screen" />
+  <title>Absolute Position</title>
+</head>
+<body>
+<h1>Absolute Positioning and Other Tricks</h1>
+
+<p>
+  This tutorial describes a little trick for positioning blocks of text anywhere on the page.
+  You should notice that this page has some white space above the title. In that white space 
+  is a paragraph containing the validation links. Notice that it appears to precede all of the 
+  rest of the text.
+</p>
+
+<p>
+  Now look at the source for this page. Notice that the paragraph that appears in that floating block 
+  is actually found at the very END of the file. Using CSS, the block has been pulled out of 
+  the flow of the document and plopped down at the top of the page!
+</p>
+
+<h2>The CSS</h2>
+<p>
+  The CSS required to move this block is shown below. This is the actual bit of CSS used to style
+  the page you are looking at now:
+</p>
+<pre><code>
+h1 {
+  margin-top: 150px;  /* this creates the big block of white space above the title! */
+}
+
+p.floater {
+  padding: 1em;
+  border: black solid 1px;
+  background: blue;
+  width: 200px;
+  position: absolute; /* this means you want to position the block manually */
+  left: 150px;  /* position relative to the left of the page (% or px or em) */
+  top: 50px;     /* position relative to the top of the page (% or px or em) */
+}
+</code></pre>
+
+<p>
+  I have to warn you, though: positioning a block with the position:absolute attribute/value does
+  not cause other text to flow around the block, the way it would if you had used float or clear.
+  Once you start using absolute positioning you will be responsible for creating white space
+  for your blocks to live in (which I did using the margin-top property of the h1 title). If you 
+  don't create white space then your blocks will appear on top of or underneath the rest of the page.
+  If you want a block to appear above another block you can use the z-index property in both 
+  blocks, which controls how different parts of the text are stacked on top of each other. 
+</p>
+
+<h2>One More Thing</h2>
+<p>
+  (you might find useful...)
+</p>
+<p>
+  If you have a block of text in your HTML that you would rather not have appearing in the web
+  page itself you can simply use the following CSS to make it disappear:
+</p>
+
+<!-- THE FOLLOWING LINE DOES NOT APPEAR IN YOUR BROWSER. THANKS, CSS!!! -->
+<h3 class="make-this-disappear">This header doesn't appear in the page!</h3>
+
+<pre><code>
+h3.make-this-disappear {
+  display: none;
+}
+</code></pre>
+
+<p>
+  Check out the source for this page to find the piece of the page that <strong>didn't</strong>
+  end up appearing in print!
+</p>
+
+<p class='floater'>
+  <a href="http://validator.w3.org/check?uri=referer"><img
+    src="http://www.w3.org/Icons/valid-xhtml11" alt="Valid XHTML 1.1" height="31" width="88" /></a>
+</p>
+</body>
+</html>

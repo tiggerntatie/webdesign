@@ -1,0 +1,29 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+  font-family: georgia, times, serif;
+  font-size: 1.1em;
+  background: #eef;
+}
+
+h1 {
+  font-family: helvetica, sans-serif;
+  font-size: 2em;
+}
+
+h2, h3 {
+  font-family: helvetica, sans-serif;
+  color: #988;
+  font-weight: bold;
+  font-style: italic;
+}
+
+h3 {
+  font-size: 1.3em;
+}
+
+h2 {
+  font-size: 1.6em
+}
+

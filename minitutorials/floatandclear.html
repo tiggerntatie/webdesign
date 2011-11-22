@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" href="floatandclear.css" type="text/css" media="screen" />
+  <title>float and clear</title>
+</head>
+<body>
+<h1><code>float</code> and <code>clear</code></h1>
+<div class='hickory'>
+  <p>
+    Text that is grouped in a <code>&lt;div&gt;</code> element pair can be moved or &ldquo;floated&rdquo;
+    around the page at will. 
+  </p>
+  <p>
+    This paragraph and the one preceding it are grouped in a pair of <code>&lt;div class='hickory'&gt;</code> 
+    elements, with a class of &ldquo;hickory&rdquo;. In CSS, this class is styled to float left.
+    The CSS looks like this:
+  </p>
+  <pre><code>
+div.hickory {
+  background-color: #eee;
+  padding: 0.4em;
+  margin: 0.2em;
+  width: 20%;
+  float: left;
+}
+  </code></pre>
+</div>
+<div class='dickory'>
+  <p>
+    The next pair of paragraphs is grouped in another pair of <code>&lt;div class='dickory'&gt;</code> elements 
+    and is also floated to the left. 
+  </p>
+  <p>
+    Note that this other block is styled differently and pulls up on the left, next to the previous
+    left floating block. Again, the CSS is here:
+  </p>
+  <pre><code>
+div.dickory {
+  background-color: #fdd;
+  padding: 0.4em;
+  margin: 0.2em;
+  border: 2px dotted #000;
+  width: 20%;
+  float: left;
+}
+  </code></pre>
+</div>
+<div class='dock'>
+  <p>
+    And now a little paragraph that is floated to the right (<code>class='dock'</code>). 
+    And its CSS:
+  </p>
+  <pre><code>
+div.dock {
+  background-color: #dfd;
+  color: #00f;
+  padding: 0.4em;
+  margin: 0.2em;
+  border: 2px dashed #000;
+  width: 10%;
+  float: right;
+}
+  </code></pre>
+</div>
+<p>
+  Any text that you add <em>outside</em> of the floated blocks will be squished into the remaining
+  whitespace of your page. <strong>Be sure to look at the HTML source for this page</strong> to
+  see how the <code>&lt;div&gt;</code> elements are being used with classes to achieve this
+  effect.
+</p>
+<div class='themouse'>
+  <p>
+    If, instead of using <code>float</code> as a CSS attribute, you use <code>clear</code>, the 
+    block will fall below any previous left or right floated blocks. If you use 
+    <code>clear: left;</code> then it will fall below any blocks floated to the left. If you use
+    <code>clear: both;</code> then it will fall below any previous floated block. The CSS for 
+    this block:
+  </p>
+  <pre><code>
+div.themouse {
+  background-color: #dfd;
+  color: #00f;
+  padding: 0.4em;
+  margin: 0.2em;
+  border: 2px solid #0f0;
+  clear: both;
+}
+  </code></pre>
+</div>
+<p>
+  Examine the <a href="view-source:http://www.netdenizen.org/webdesign/minitutorials/floatandclear.html">
+  source HTML</a> used by this web page (Firefox or Chrome).
+</p>
+<p>
+  View <a href="http://www.netdenizen.org/webdesign/minitutorials/floatandclear-nocss.html">
+  this page without CSS</a>.
+</p>
+<p>
+  Examine the <a href="floatandclear.css">CSS </a> used by this web page.
+</p>
+
+<p>
+  <a href="http://validator.w3.org/check?uri=referer"><img
+    src="http://www.w3.org/Icons/valid-xhtml11" alt="Valid XHTML 1.1" height="31" width="88" /></a>
+</p>
+</body>
+</html>

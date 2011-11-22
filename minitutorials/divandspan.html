@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" href="divandspan.css" type="text/css" media="screen" />
+  <title>div and span</title>
+</head>
+<body>
+<h1><code>&lt;div&gt;</code> and <code>&lt;span&gt;</code></h1>
+<p>
+  The elements (or tags) that you use in HTML come in two flavors: block and inline. Elements 
+  like <code>&lt;p&gt;</code>, <code>&lt;ul&gt;</code> and <code>&lt;h1&gt;</code> are 
+  <strong>block</strong> elements. Block elements
+  always force an end-of-line in any text that precede them, and force a new line to start
+  after the element.
+</p>
+<div class='box'>
+<p>
+  The <strong>inline</strong> elements are, for example, <code>&lt;strong&gt;</code>, <code>
+  &lt;em&gt;</code> and <code>&lt;img&gt;</code>. When these elements appear in your HTML they 
+  do not interrupt the flow of the line of text. They do not force a new line on your page.
+</p>
+<p>
+  If you want to group parts of your page in an arbitrary way, either as a block or as an inline
+  group of text, you can use the <code>&lt;div&gt;</code> and <code>&lt;span&gt;
+  </code> elements. The <code>&lt;div&gt;</code> element is used to create a collection of blocks 
+  that behaves like a single block element and <code>&lt;span&gt;</code> is used to create a 
+  collection of inline text that behaves like an inline element.
+</p>
+</div>
+<p>
+  For example, I grouped the two preceding paragraphs inside a pair of <code>&lt;div&gt;</code>
+  elements and styled it in CSS.
+</p>
+<p>
+The CSS looks like this (and view the page source to see what the HTML looks like:
+</p>
+<pre><code>
+div.box {
+  background-color: #eee;
+  padding: 3em;
+  width: 80%;
+}
+</code></pre>
+<p>
+  Suppose you want to style a section of text, but none of the usual HTML elements really seem
+  appropriate. For example, if you wanted to print every instance of the word <span class='batman'>
+  Batman</span> in some odd color, then you could use the <code>&lt;span&gt;</code> element to 
+  wrap every instance of <span class='batman'>Batman</span> and style them in CSS. For example, 
+  the HTML for this paragraph looks like this:
+</p>
+<pre><code>
+  Suppose you want to style a section of text, but none of the usual HTML elements really seem
+  appropriate. For example, if you wanted to print every instance of the word &lt;span class='batman'>
+  Batman&lt;/span> in some odd color, then you could use the &lt;code>&lt;span&gt;&lt;/code> element to 
+  wrap every instance of &lt;span class='batman'>Batman&lt;/span> and style them in CSS. For example, 
+  the HTML for this paragraph looks like this:
+</code></pre>
+<p>
+And the CSS looks like this:
+</p>
+<pre><code>
+span.batman {
+  color: #f00;
+}
+</code></pre>
+
+<p>
+  Examine the <a href="view-source:http://www.netdenizen.org/webdesign/minitutorials/divandspan.html">
+  source HTML</a> used by this web page (Firefox or Chrome).
+</p>
+<p>
+  Examine the <a href="divandspan.css">CSS </a> used by this web page.
+</p>
+
+<p>
+  <a href="http://validator.w3.org/check?uri=referer"><img
+    src="http://www.w3.org/Icons/valid-xhtml11" alt="Valid XHTML 1.1" height="31" width="88" /></a>
+</p>
+</body>
+</html>

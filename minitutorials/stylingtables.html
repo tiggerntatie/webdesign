@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" href="stylingtables.css" type="text/css" media="screen" />
+  <title>Styling Tables with CSS</title>
+</head>
+<body>
+<h1>Styling Tables with CSS</h1>
+<h2>Notes on Sizes in CSS</h2>
+<p>
+  When you work with CSS, you often specify the size of something. With fonts we have done this
+  using the <code>em</code> unit (for example, <code>font-size: 1.1em;</code>), but without
+  any explanation. Here's the explanation and a list of some other units you may use:
+</p>
+  <dl>
+    <dt>em</dt>
+    <dd>A unit of length equivalent to the height of the lower case 'm' character. In general, 
+      em units are best for styling pages. If you use em to size a font then it signifies how
+      much bigger or smaller your font will be than the default size. For example 2.0em will 
+      be twice the height of the default text.
+    </dd>
+    <dt>px</dt>
+    <dd>The px unit refers to pixels on the reader's screen. Because screen sizes and resolutions
+      vary dramatically for different users, this is a highly unreliable unit of length. It is 
+      useful, however, for specifying the finest possible line widths 
+      (ex: <code>border: 1px solid black;</code>).
+    </dd>
+    <dt>%</dt>
+    <dd>The percent unit specifies a size as a percentage of the container. For example, if
+      you say a table will be 50% in width, then it will be half as wide as the web page that
+      contains it.
+    </dd>
+    <dt>in</dt>
+    <dd>The in unit refers to inches. This is not reliable on computer screens, but may be useful
+      if you are styling a page for printing on paper.
+    </dd>
+    <dt>cm</dt>
+    <dd>The cm unit refers to centimeters. See the comment on inches, above.
+    </dd>
+  </dl>
+<h2>CSS Attributes For Tables</h2>
+<table>
+  <caption></caption>
+  <tr>
+    <th class="attribute">attribute</th> 
+    <th class="example">example values</th> 
+    <th class="explain">used for...</th>
+  </tr>
+  <tr>
+    <td><code>width</code></td>
+    <td><code>75%;</code></td>
+    <td>Specify the overall width of the table, as a percentage of the page.</td>
+  </tr>
+  <tr>
+    <td><code>border</code></td> 
+    <td><code>2px solid #222;</code></td> 
+    <td>Specify a border around the table as a line with width, style and color. The width
+      can be specified using any length units you want, the style is typically solid or dashed
+      and the color can be whatever you choose.
+    </td>
+  </tr>
+  <tr>
+    <td><code>border-spacing</code></td>
+    <td><code>1.5em;</code></td>
+    <td>Specify the spacing between cells in a table.</td>
+  </tr>
+  <tr>
+    <td><code>caption-side</code></td>
+    <td><code>bottom</code></td>
+    <td>Where will the caption appear? Default is top.</td>
+  </tr>
+</table>
+<h2>CSS Attributes for Cells, Headings and the Table Caption</h2>
+<table>
+  <tr>
+    <th class="attribute">attribute</th> 
+    <th class="example">example values</th> 
+    <th class="explain">used for...</th>
+  </tr>
+  <tr>
+    <td><code>text-align</code></td>
+    <td><code>left</code> or <code>right</code> or <code>center</code></td>
+    <td>How will text in the cell be aligned?</td>
+  </tr>
+  <tr>
+    <td><code>vertical-align</code></td>
+    <td><code>top</code> or <code>bottom</code> or <code>center</code></td>
+    <td>How will text in the cell be aligned?</td>
+  </tr>
+  <tr>
+    <td><code>border</code></td> 
+    <td><code>2px solid #222;</code></td> 
+    <td>Specify a border around the cell as a line with width, style and color. The width
+      can be specified using any length units you want, the style is typically solid or dashed
+      and the color can be whatever you choose. You can also specify one of the four borders of
+      the cell individually with <code>border-top</code>, <code>border-right</code>, etc.
+    </td>
+  </tr>
+  <tr>
+    <td><code>background</code></td>
+    <td><code>#eee;</code></td>
+    <td>Specify a color or image for the background of the cell.</td>
+  </tr>
+  <tr>
+    <td><code>padding</code></td>
+    <td><code>1.5em;</code></td>
+    <td>Specify the width of whitespace surrounding the text inside the cell. This may be 
+      thought of as a margin for the cell. You can also specify 
+      <code>padding-top</code>, <code>padding-right</code>, etc.
+    </td>
+  </tr>
+</table>
+
+<h2>Customizing Column Widths</h2>
+<p>
+  If you want the column widths to be different, you will have to specify the widths individually
+  for each of the <code>&lt;th&gt;</code> tags individually. To do this, specify the <em>class</em>
+  of the tags like this (for example):
+</p>
+<pre><code>
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th class="attribute"&gt;attribute&lt;/th&gt; 
+    &lt;th class="example"&gt;example values&lt;/th&gt; 
+    &lt;th class="explain"&gt;used for...&lt;/th&gt;
+  &lt;/tr&gt;...
+</code></pre>
+<p>
+  Then in your CSS, you can distinguish between the different <code>&lt;th&gt;</code> tags by
+  specifying their class. Just be sure that all the widths add up to 100%:
+</p>
+<pre><code>
+th.attribute, th.example {
+  width: 15%;
+}
+
+th.explain {
+  width: 70%;
+}
+</code></pre>
+<p>
+  These are just the tip of the iceberg when it comes to styling tables. See this 
+  <a href="http://dev.opera.com/articles/view/33-styling-tables/">reference for styling tables</a>
+  for a more exhaustive list.
+</p> 
+
+  <p>
+    Examine the <a href="view-source:http://www.netdenizen.org/webdesign/minitutorials/stylingtables.html">
+    source HTML</a> used by this web page (Firefox or Chrome).
+  </p>
+  <p>
+    Examine the <a href="stylingtables.css">CSS </a> used by this web page.
+  </p>
+
+<p>
+  <a href="http://validator.w3.org/check?uri=referer"><img
+    src="http://www.w3.org/Icons/valid-xhtml11" alt="Valid XHTML 1.1" height="31" width="88" /></a>
+</p>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" href="http://netdenizen.org/webdesign/screen.css" type="text/css" media="screen" />
+  <title>Forms and Form Elements</title>
+</head>
+<body>
+<h1>Forms and Form Elements</h1>
+<p>
+  The basic layout of an HTML form looks like this (taken from 
+  <a href="http://www.netdenizen.org/webdesign/challenge6.html">Challenge 6</a>):
+</p>
+<pre><code>
+&lt;form id="visitor-info-form" action="http://www.netdenizen.org/webdesign/formecho.php" method="post">
+  &lt;fieldset>
+    &lt;legend>Visitor Information&lt;/legend>
+    &lt;ul class="form">
+      &lt;li>
+        &lt;label for="first-name" class="label">First Name: &lt;/label>
+        &lt;input type="text" name="first-name" id="first-name" value="your name" class="input"/>
+      &lt;/li>
+          &lt;li>
+            &lt;label for="birthplace" class="label">Your Birthplace: &lt;/label>
+            &lt;input type="text" name="birthplace" id="birthplace" value="where born" class="input" />
+          &lt;/li>
+...  (more list items and input tags)
+    &lt;/ul>
+  &lt;/fieldset>
+&lt;/form>
+</code></pre>
+<p>
+  All of the form fields shown in this example
+  have an optional 'class' attribute set, which aids with styling the form with CSS.
+</p>
+
+<ul>
+  <li>The <code>&lt;form></code> element encloses all of the data entry elements. The action
+    and method attributes are used to control how the form is uploaded to the server.</li>
+  <li>The <code>&lt;fieldset></code> element draws an enclosing box border around the form.</li>
+  <li>The <code>&lt;legend></code> element adds a label to the enclosing box.</li>
+  <li>Every form element is placed inside an unordered list (<code>&lt;ul></code>). The list
+    is assigned a class (in this case 'form') so that it can be styled in CSS. Each item has:
+    <ul>
+      <li>A <code>&lt;label></code> element that introduces or describes each form field. Its 
+        'for' attribute identifies the <strong>id</strong> of the input element it is associated
+        with. The class attribute is used to help with styling in CSS.</li>
+      <li>A <code>&lt;input></code> element that represents a text box, checkbox, radio button
+        or password box. The attribute assignment <code>type="text"</code> indicates that
+        the input element will be a text box that the page visitor can type in. The 'name' 
+        attribute is used to identify the entered data when the form is uploaded to the server.
+        The 'id' attribute is used to identify this element to the <code>label</code> element. The
+        'id' and 'name' attributes are often set to the same value, though this is not required. The
+        'value' attribute is used create some initial, default text in the box.</li>
+    </ul>
+  </li>
+</ul>
+<p>
+  Note that the label and input elements are "self closing". They do not have a following 
+  <code>&lt;/label&gt;</code> tag, but instead end the opening tag with <code>/></code>.
+  There are some additional 'type' attribute values for the <code>&lt;input></code> element. Some
+  examples of these follow.
+</p>
+<ul>
+  <li>
+    The password type <code>&lt;input></code> shows stars when the user types in the box. This 
+    is usually used for hiding passwords on forms.
+<pre><code>
+&lt;input type="password" name="secret" id="secret" value="" class="input" />
+</code></pre>
+  </li>
+  <li>
+    The radio type <code>&lt;input></code>. Use the same 'name' attribute with several of these
+    in a form and only one of them will be selectable. The value of the 'value' attribute will
+    be uploaded to the server when the user submits the form.
+<pre><code>
+&lt;input type="radio" name="birth-decade" id="birth-decade-70s" value="70s" />
+</code></pre>
+  </li>
+  <li>
+    The checkbox type <code>&lt;input></code>. The value of the 'value' attribute will
+    be uploaded to the server when the user submits the form.
+<pre><code>
+&lt;input type="checkbox" name="leaning" id="leaning-liberal" value="liberal" />
+</code></pre>
+  </li>
+  <li>
+    The button type <code>&lt;input></code>. The value of the 'value' attribute will be shown
+    as the text on the button. The 'onclick' attribute is used to execute a Javascript program.
+<pre><code>
+&lt;input type='button' value='Show Story' onclick='javascript:challenge6.transferWords("madlibs");' class="input" />
+</code></pre>
+  </li>
+</ul>
+
+<p>
+  There are a couple of additional form elements worth knowing:
+</p>
+
+<ul>
+  <li>
+    The <code>&lt;select></code> and <code>&lt;option></code> elements are used to create a 
+    pulldown list of selectable items. For example, for selecting a month:
+<pre><code>
+&lt;select name="birth-month" id="birth-month" class="input">
+  &lt;option value="January">January&lt;/option>
+  &lt;option value="February">February&lt;/option>
+  &lt;option value="March">March&lt;/option>
+  &lt;option value="April">April&lt;/option>
+  &lt;option value="May">May&lt;/option>
+  &lt;option value="June">June&lt;/option>
+  &lt;option value="July">July&lt;/option>
+  &lt;option value="August">August&lt;/option>
+  &lt;option value="September">September&lt;/option>
+  &lt;option value="October">October&lt;/option>
+  &lt;option value="November">November&lt;/option>
+  &lt;option value="December">December&lt;/option>
+&lt;/select>
+</code></pre>
+  </li>
+  <li>
+    The <code>&lt;textarea></code> element is used to create a multiline edit box. For example:
+<pre><code>
+&lt;textarea name="world-view" id="world-view" rows="3" cols="30" class="input">What is your world view?&lt;/textarea>
+</code></pre>
+    The <code>rows</code> and <code>cols</code> attributes set an initial height and width of 
+    the text box, in characters. Note that this element <strong>does</strong> require an ending 
+    tag; the text between them is the value returned to the server.
+  </li>
+</ul>
+<p>
+  Examine the <a href="view-source:http://www.netdenizen.org/webdesign/minitutorials/forms.html">
+  source HTML</a> used by this web page (Firefox or Chrome).
+</p>
+
+<p>
+  <a href="http://validator.w3.org/check?uri=referer"><img
+    src="http://www.w3.org/Icons/valid-xhtml11" alt="Valid XHTML 1.1" height="31" width="88" /></a>
+</p>
+</body>
+</html>

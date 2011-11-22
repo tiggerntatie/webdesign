@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" href="http://netdenizen.org/webdesign/screen.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="http://netdenizen.org/webdesign/menu.css" type="text/css" media="screen" />
+  <title>Pure CSS Pulldown Navigation</title>
+</head>
+<body>
+<h1>Pure CSS Pulldown Navigation</h1>
+
+<ul class="sitenavigation">
+  <li><a href="#">One</a></li>
+  <li><a href="#">Two</a></li>
+  <li>
+    <span>Three...</span>
+    <ul>
+      <li><a href="#">Sub One</a></li>
+      <li><a href="#">Sub Two</a></li>
+      <li><a href="#">Sub Three</a></li>
+    </ul>
+  </li>
+  <li><a href="#">Four</a></li>
+  <li><a href="#">Five</a></li>
+</ul>
+
+<p>
+  While it is true that most of the fancy pulldown, flyout super menus are designed using 
+  Javascript, it is possible to do a reasonably nice job using pure CSS! I have 
+  <a href="http://csswizardry.com/2011/02/creating-a-pure-css-dropdown-menu/"> adapted
+  a simple CSS-based menu design</a> for this page.
+</p>
+
+<p>
+  Your menu links must be organized as a one or two-level hierarchy of unordered lists. For 
+  example, the menu at the top of this page is coded using the following HTML:
+</p>
+
+<pre><code>
+&lt;ul class="sitenavigation">
+  &lt;li>&lt;a href="#">One&lt;/a>&lt;/li>
+  &lt;li>&lt;a href="#">Two&lt;/a>&lt;/li>
+  &lt;li>
+    &lt;span>Three...&lt;/span>
+    &lt;ul>
+      &lt;li>&lt;a href="#">Sub One&lt;/a>&lt;/li>
+      &lt;li>&lt;a href="#">Sub Two&lt;/a>&lt;/li>
+      &lt;li>&lt;a href="#">Sub Three&lt;/a>&lt;/li>
+    &lt;/ul>
+  &lt;/li>
+  &lt;li>&lt;a href="#">Four&lt;/a>&lt;/li>
+  &lt;li>&lt;a href="#">Five&lt;/a>&lt;/li>
+&lt;/ul>
+</code></pre>
+
+<p>
+  Notice that the links are all set to "#", which means they won't go anywhere. You should
+  replace those with whatever HTML links you need. If you are working with Challenge 9, then
+  the web page you are trying to style is already written using this method!
+</p>
+
+<p> 
+  Here is the <a href="http://netdenizen.org/webdesign/menu.css">corresponding CSS file</a>. 
+  I have tried to simplify this
+  a little from the original author's version, and I have intentionally set colors and 
+  backgrounds that make the design <strong>ugly</strong>. You must start by making a complete
+  copy of this CSS file and changing the text, border, background, etc., styles to suit your
+  page design.
+</p>
+<p>
+  Don't worry if you don't understand all of this CSS right away. If you're curious, read the CSS
+  and think about it line by line. I don't understand all of it either, but that doesn't stop me
+  from borrowing it and modifying it!
+</p>
+
+<p>
+  Examine the <a href="view-source:http://www.netdenizen.org/webdesign/minitutorials/pulldownnavigation.html">
+  source HTML</a> used by this web page (Firefox or Chrome).
+</p>
+
+<p>
+  <a href="http://validator.w3.org/check?uri=referer"><img
+    src="http://www.w3.org/Icons/valid-xhtml11" alt="Valid XHTML 1.1" height="31" width="88" /></a>
+</p>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>How to use &lt;table&gt; tags</title>
+</head>
+<body>
+<h1>How to use &lt;table&gt; tags</h1>
+<p>
+The <code>&lt;table&gt;</code> tag is how you organize any information that should be presented
+in the form of a table. For example: 
+</p>
+<table>
+  <caption>This is a table caption</caption>
+  <tr>
+    <th>A Column Heading</th> <th>B Column Heading</th> <th>C Column Heading</th>
+  </tr>
+  <tr>
+    <td>A cell</td> <td>Another cell</td> <td>Yet another cell!</td>
+  </tr>
+  <tr>
+    <td>A cell in the next row</td> <td>And another</td> <td>And so on...</td>
+  </tr>
+</table>
+<p>
+  The HTML code for this looks like:
+</p>
+<pre><code>
+&lt;table&gt;
+  &lt;caption&gt;This is a table caption&lt;/caption&gt;
+  &lt;tr&gt;
+    &lt;th&gt;A Column Heading&lt;/th&gt; &lt;th&gt;B Column Heading&lt;/th&gt; &lt;th&gt;C Column Heading&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;A cell&lt;/td&gt; &lt;td&gt;Another cell&lt;/td&gt; &lt;td&gt;Yet another cell!&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;A cell in the next row&lt;/td&gt; &lt;td&gt;And another&lt;/td&gt; &lt;td&gt;And so on...&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+</code></pre>
+<p>
+  This example doesn't look like much: there are no borders around the table cells, the way you would
+  expect to find in a word processor. We will spend more time making tables look pretty when we
+  get to styling pages with CSS. 
+</p>
+<p>
+  Every table is enclosed inside <code>&lt;table&gt;</code> and <code>&lt;/table&gt;</code>
+  tags. Within the table tags, define table rows using <code>&lt;tr&gt;</code> and <code>&lt;/tr&gt;
+  </code> tags. Within rows, define cells using <code>&lt;th&gt;</code> tag pairs for heading cells 
+  and <code>&lt;td&gt;</code> for ordinary data cells. Easy!
+</p>
+<p>
+  <a href="http://validator.w3.org/check?uri=referer"><img
+    src="http://www.w3.org/Icons/valid-xhtml11" alt="Valid XHTML 1.1" height="31" width="88" /></a>
+</p>
+</body>
+</html>

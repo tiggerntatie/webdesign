@@ -1,0 +1,56 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+  background-image: url(logo7.png), url(gradient7.png);
+  background-position: 20px 40px, top center;
+  background-repeat: no-repeat, repeat-x;
+  background-color: #ffb95f;
+  font-family: verdana;
+}
+
+h1 {
+  font-size: 3em;
+  padding: 2%;
+  width: 70%;
+  margin-left: 175px;
+  margin-right: auto;
+  text-align: center;
+  background-color: rgba(0,0,0,0.1);
+}
+
+div.body, div.footer {
+  padding: 2%;
+  width: 70%;
+  margin-left: 175px;
+  margin-right: auto;
+  background-color: rgba(0,0,0,0.1);
+}
+
+/* HORIZONTAL NAVIGATION */
+ul.h-navigation { 
+  margin: 0;
+  padding: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%
+}
+
+ul.h-navigation li {
+  display: inline;
+/*  background-color: #eee; */
+  padding: 0.1em 0.3em 0.1em 0.3em;
+}
+
+ul.h-navigation a {
+  text-decoration: none;
+  font-family: verdana, sans-serif;
+  font-size: 1.2em;
+}
+
+ul.h-navigation a:hover {
+  color: #fff;
+}
+ul.h-navigation li:hover {
+  color: #fff;
+}

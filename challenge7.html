@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" href="challenge7.css" type="text/css" media="screen" />
+  <title>Web Design Challenge 7: Slick Background Tricks</title>
+</head>
+<body>
+<h1>Web Design Challenge 7: Slick Background Tricks</h1>
+<div class="body">
+
+<ul class='h-navigation'>
+  <li><a href="http://www.netdenizen.org/webdesign/index.html">Web Design Home</a></li>
+  <li><a href="http://www.netdenizen.org/webdesign/calendar.html">Assignment Calendar</a></li>
+  <li><a href="http://www.netdenizen.org/webdesign/studentwork">Student Work</a></li>
+</ul>
+
+<h2>A few more things to play with</h2>
+<p>
+  This challenge just introduces a handful of other goodies you can use 
+  to style your page backgrounds.
+</p>
+<p>
+  The page you are looking at has several different things going on in the background. First
+  of all, the background-color has been set to that salmon like color using CSS:
+</p>
+<pre><code>
+background-color: #ffb95f;
+</code></pre>
+<p>
+  There is a nifty gradient effect going on at the top of the page. This is done by repeating a 
+  single, small gradient image across the top of the page. You can 
+  <a href="http://www.netdenizen.org/webdesign/gradient7.png">take a look at the image</a> here.
+  The (incredibly ugly) <a href="http://www.netdenizen.org/webdesign/logo7.png">logo image</a>
+  is a separate image that is overlaid on the gradient. Both of these images are specified
+  in the CSS like this:
+</p>
+<pre><code>
+body {
+  background-image: url(logo7.png), url(gradient7.png);
+  background-position: 20px 40px, top center;
+  background-repeat: no-repeat, repeat-x;
+  background-color: #ffb95f;
+  font-family: verdana;
+}
+</code></pre>
+<p>
+  Notice that the background color was carefully chosen to match the very bottom edge of the 
+  gradient image, so that they would blend seamlessly together.
+</p>
+<h2>Alpha blending</h2>
+<p>
+  Do you notice how the background of the h1 heading and body text appears to be semi-transparent?
+  This is an effect available with CSS that is supported in most of the recent web browsers. To do 
+  this, you have to specify the block (using div in this case) background-color using a 
+  slightly different method. For example:
+</p>
+<pre><code>
+  background-color: rgba(0,0,0,0.1);
+</code></pre>
+<p>
+  This specifies a <strong>black</strong> background (the 0,0,0 are decimal equivalents of the
+  hex numbers that are usually used to specify colors. These can range from 0 to 255. So, for 
+  example, you would specify the color white as rgb(255,255,255)). The rgb<strong>a</strong>
+  command adds an alpha channel, which is a fancy term for transparency. The last number in the 
+  rgba command is a decimal value between 0.0 and 1.0, which specifies how <em>transparent</em>
+  the color is. An alpha value of 0.0 is perfectly transparent, and 1.0 is perfectly opaque.
+</p>
+<p>
+  You can look at the <a href="challenge7.css">entire CSS file</a> for this page.
+</p>
+<h2>How to make the gradient and logo</h2>
+<p>
+  All of the images for this challenge page were created using an online image editor called
+  <a href="http://www.sumopaint.com/app/">Sumo Paint</a>.
+</p>
+<h3>The gradient image</h3>
+<ul>
+  <li>In Sumo Paint, create a new image.</li>
+  <li>Set the image size to 10 pixels by 100 pixels.</li>
+  <li>Click the gradient fill tool on the toolbar (left).</li>
+  <li>Select one of predefined sexy gradients.</li>
+  <li>Click-drag from the top of your image to the bottom to fill the background.</li>
+  <li>When you have one you like, save it to your computer as a png file.</li>
+  <li>Upload the image to our web server using Cyberduck.</li>
+</ul>
+<h3>The background color</h3>
+<ul>
+  <li>With the gradient image still in Sumo Paint...</li>
+  <li>Select the eyedropper tool.</li>
+  <li>Click at the very bottom of your gradient image.</li>
+  <li>Look to the color palette (on the right). The color you have "picked" using the tool
+    should appear in hex form (e.g. #ffb95f). Make a note of this. </li>
+  <li>Use the color from the previou step as the <strong>background</strong> color for your page.</li>
+</ul>
+<h3>The ugly logo</h3>
+<ul>
+  <li>In Sumo Paint, create a new image and size it for 150px by 150px (for example).</li> 
+  <li>Create a new layer (lower right)</li>
+  <li>Delete the original layer with its white background</li>
+  <li>Create the most amazing logo you can imagine in this 150x150 pixel canvas.</li>
+  <li>Save your image to your computer as a png file.</li>
+  <li>Upload the image to our web server using Cyberduck.</li>
+</ul>
+<h3>Bring it all together</h3>
+<p>
+  Now when you specify the background information, you can list both the gradient and 
+  logo images together. The first image listed will appear <em>on top of the others</em> which
+  can give you a nice layered effect. Separate images using commas like this:
+</p>
+<pre><code>
+background-image: url(logo7.png), url(gradient7.png);
+background-position: 20px 40px, top center;
+background-repeat: no-repeat, repeat-x;
+</code></pre>
+
+<h2>The Challenge Assignment</h2>
+<p>
+  This assignment is <strong>Extra Credit</strong>!
+</p>
+<ol>
+  <li>Create new HTML and CSS pages named <code>challenge07.html</code> and <code>challenge07.css
+    </code>.</li>
+  <li>Using this challenge as a model, and Sumo Paint, create your own funky gradient background 
+    and logo design.</li>
+  <li>Fill your page with text, so that it will look like a normal web page with CONTENT!</li>
+  <li>I recommend using the <a href="http://www.lipsum.com/">Lorem Ipsum generator</a> to produce
+    reams of nonsense text. This is what the professionals use when making a web page mockup.</li>
+  <li>That's it!</li>
+</ol>
+
+</div>
+
+<div class="footer">
+  <h3>About this page...</h3>
+  <p>
+    Examine the <a href="view-source:http://www.netdenizen.org/webdesign/challenge7.html">source HTML</a> used 
+    by this web page (Firefox or Chrome).
+  </p>
+  <p>
+    Examine the <a href="challenge7.css">CSS </a> used by this web page.
+  </p>
+  <p>
+    Note: by default the CSS validator will FAIL on this CSS file. You have to manually validate 
+    the CSS and select "more options", then select the "CSS level 3" option. This page uses advanced
+    CSS version 3 features that the default CSS validation does not recognize!
+  </p>
+  <p>
+    <a href="http://validator.w3.org/check?uri=referer"><img
+      src="http://www.w3.org/Icons/valid-xhtml11" alt="Valid XHTML 1.1" height="31" width="88" /></a>
+    <a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3">
+        <img style="border:0;width:88px;height:31px"
+            src="http://jigsaw.w3.org/css-validator/images/vcss"
+            alt="Valid CSS!" />
+    </a>
+  </p>
+</div>
+
+</body>
+</html>

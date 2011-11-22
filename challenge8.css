@@ -1,0 +1,111 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+  background-image: url(gradient8.png);
+  background-position: top center;
+  background-repeat: repeat-x;
+  background-color: #c9ccce;
+  font-family: verdana;
+}
+
+code {
+  font-size: 1.2em;
+}
+
+h1 {
+  font-size: 3em;
+  padding: 2%;
+  width: 70%;
+  margin-left: 175px;
+  margin-right: auto;
+  margin-top: 0.2em;
+  text-align: center;
+}
+
+div.body, div.footer {
+  padding: 2%;
+  width: 70%;
+  margin-left: 175px;
+  margin-top: 50px;
+  margin-right: auto;
+  background-color: rgba(0,0,0,0.1);
+}
+
+ol.instructions li {
+  padding-bottom: 0.5em;
+}
+
+
+/* FORM STYLING */
+
+ul.form {
+  padding: 0;             /* none of the lefthand whitespace that a list usually has */
+  list-style-type: none;  /* no bullets, please */
+}
+
+ul.form li {
+  clear: both;        /* each li is fully below one before */
+  padding: 0.2em;     /* space each item in the list */
+  margin: 0.2em;      
+  overflow: auto;     /* expand to enclose all blocks inside */
+  background-color: rgba(140,0,0,0.1);  /* group each row, visually */
+}
+
+ul.form .label {
+  display: block;     /* each label works like a block, */
+  float: left;        /* and floated to the left */
+  width: 30%;         /* uniform column width */
+}
+
+ul.form li .input {
+  display: block;    /* each collection of inputs works like a block, */
+  float: left;       /* and floated to the left */
+}
+
+/* VISITORS TABLE */
+table.visitors {
+  width: 100%;
+}
+
+table.visitors td {
+  border: black solid 1px;
+}
+
+
+td.who, th.who{
+  width: 60%;
+}
+
+td.comments, th.comments {
+  width: 40%;
+}
+
+/* HORIZONTAL NAVIGATION */
+ul.h-navigation { 
+  margin: 0;
+  padding: 0.5em;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  border: solid black 1px;
+}
+
+ul.h-navigation li {
+  display: inline;
+/*  background-color: #eee; */
+  padding: 0.1em 0.3em 0.1em 0.3em;
+}
+
+ul.h-navigation a {
+  text-decoration: none;
+  font-family: verdana, sans-serif;
+  font-size: 1.2em;
+}
+
+ul.h-navigation a:hover {
+  color: #fff;
+}
+ul.h-navigation li:hover {
+  color: #fff;
+}

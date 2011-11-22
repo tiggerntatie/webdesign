@@ -1,0 +1,18 @@
+@charset "utf-8";
+/* CSS Document */
+
+td {
+  padding: 0.75em;
+}
+
+th.attribute {
+  width: 25%;
+}
+
+th.example {
+  width: 25%;
+}
+
+th.explain {
+  width: 50%;
+}

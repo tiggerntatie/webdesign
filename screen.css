@@ -1,0 +1,178 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+  font-family: georgia, serif;
+  font-size: 1em;
+}
+
+h1 {
+  font-family: verdana, sans-serif;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 2em;
+}
+
+/* DEFAULT table */
+
+table caption {
+  font-family: verdana, sans-serif;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 1.2em;
+  padding: 1em;
+  vertical-align: middle;
+}
+
+table {
+  border-spacing: 1em;
+}
+
+table th {
+  font-family: verdana, sans-serif;
+  font-weight: bold;
+}
+
+table td {
+  border: 0px solid #eee;
+  padding: 1em;
+  background: #eee;
+}
+
+/* CALENDAR table */
+
+table#calendar caption {
+  font-family: verdana, sans-serif;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 1.4em;
+  margin: 1em;
+}
+
+table#calendar th {
+  font-family: verdana, sans-serif;
+  font-weight: bold;
+}
+
+table#calendar td {
+  border: 0px solid #eee;
+  padding: 0.5em;
+  width: 20%;
+  vertical-align: top;
+  background: #fff;
+}
+
+table#calendar div.date {
+  padding: 0.2em;
+  background: #ddd;
+  font-family: verdana, sans-serif;
+  font-weight: bold;
+}
+
+/* STUDENTWORK table */
+table.studentwork {
+  border-spacing: 0.2em;
+  margin: 1em;
+  font-family: georgia, times, serif;
+  font-weight: normal;
+  font-style: normal;
+  float: left;
+}
+
+table.studentwork th {
+  font-family: georgia, times, serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+table.studentwork th.column {
+}
+
+table.studentwork td {
+  padding: 0.1em;
+  font-family: georgia, times, serif;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #0A0;
+  text-align: center;
+}
+
+table.studentwork td.missing {
+  background-color: #fff;
+}
+
+table.studentwork td a {
+  text-decoration: none;
+  color: #fff;
+}
+
+table.studentwork td.missing a {
+  color: #000;
+}
+
+table.studentwork td a:hover {
+}
+
+table.studentwork .duedate {
+  font-size: 0.6em;
+}
+
+.clear {
+  clear: left;
+}
+
+/* experimental */
+.surprise:hover {
+  font-weight: bold;
+}
+
+/* HORIZONTAL NAVIGATION */
+ul.h-navigation { 
+  margin: 0;
+  padding: 0.5em;
+}
+
+ul.h-navigation li {
+  display: inline;
+  background-color: #eee;
+  padding: 0.1em 0.3em 0.1em 0.3em;
+}
+
+ul.h-navigation a {
+  text-decoration: none;
+  font-family: verdana, sans-serif;
+}
+
+ul.h-navigation li:hover {
+  background-color: #ccc;
+}
+
+/* link styling */
+
+a {
+  text-decoration: underline;
+}
+
+a:link {
+  color: #0000CC;
+}
+
+a:visited {
+  color: #6D006D;
+}
+
+a:focus {
+  color: #CC0000;
+}
+
+a:hover {
+  color: #CC0000;
+}
+ 
+a:active {
+  color: #CC0000;
+}
+
+img { 
+  border: 0;
+}

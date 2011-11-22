@@ -1,0 +1,59 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+  font-family: georgia, serif;
+  font-size: 1em;
+}
+
+h1 {
+  font-family: verdana, sans-serif;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 2em;
+}
+
+
+/* NAVIGATION styling */
+ul.navigation { 
+  margin: 0;
+  padding: 0.5em;                     /* a little space around the menu                               */
+}
+
+ul.navigation li {
+  display: inline;                    /* turns a <li> into an inline tag, instead of a block     */
+                                      /* this also gets rid of the bullets                             */
+  background-color: #eee;             /* set it apart visually                                         */
+  padding: 0.1em 0.3em 0.1em 0.3em;   /* give it some added bulk and size                              */
+                                      /* these sizes are for top right bottom and left, respectively   */
+}
+
+ul.navigation a {
+  text-decoration: none;              /* no underline for these links                                  */
+  font-family: verdana, sans-serif;   /* a different font to set them apart from text                  */
+}
+
+ul.navigation li:hover {
+  background-color: #ccc;             /* change the link background color when the user hovers         */
+}
+
+
+/* PARAGRAPH styling test */
+p.one {
+  color: #f00;
+}
+
+p.two {
+  color: #0f0;
+}
+
+p.three {
+  color: #00f;
+}
+
+p.four {
+  color: #f0f;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+

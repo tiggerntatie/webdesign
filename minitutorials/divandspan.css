@@ -1,0 +1,24 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+  font-family: georgia, serif;
+  font-size: 1em;
+}
+
+h1 {
+  font-family: verdana, sans-serif;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 2em;
+}
+
+div.box {
+  background-color: #eee;
+  padding: 3em;
+  width: 80%;
+}
+
+span.batman {
+  color: #f00;
+}

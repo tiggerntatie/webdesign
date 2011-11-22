@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>How to use &lt;img&gt; tags</title>
+</head>
+<body>
+<h1>How to use &lt;img&gt; tags</h1>
+<p>
+The <code>&lt;img&gt;</code> tag is used to insert an image (photograph, graphic, etc.) in your
+web page. The <code>&lt;img&gt;</code> tag should <em>only</em> be used for adding images that
+are relevant to the content of the page. Do <em>not</em> use the <code>&lt;img&gt;</code> tag to
+add images that are incidental to your content. Any image that is part of the style or look and
+feel of the page should be added using CSS.
+</p>
+<p>
+For example, if you were writing a page about the battleship Massachusetts, it would make sense
+to have a photograph of the ship itself. Use the <code>&lt;img&gt;</code> tag for this. If your
+page also has a background image consisting of an endless vista of white capped waves, to give
+your page a salty nautical feel, then that image should be added using CSS, because it does
+not add anything to the <em>information</em> on your page.
+</p>
+<p>
+One way to understand the distinction is to ask yourself whether a blind person using a screen
+reading program would need to know anything about the image. If the reader doesn't need to know
+about the image to understand the article, then it should be added using CSS.
+</p>
+
+<h2>Using the <code>&lt;img&gt;</code> Tag</h2>
+
+<p>
+Following is an example of the <code>&lt;img&gt;</code> in use:
+</p>
+<pre><code>
+&lt;img src="pictures/google-150.png" 
+     alt="Screenshot of the google.com homepage"
+     width="150" height="90" /&gt;
+</code></pre>
+<p>
+There are a few things worth noticing about this:
+</p>
+<ul>
+  <li>The <code>&lt;img&gt;</code> tag does <strong>not</strong> have a closing 
+    <code>&lt;/img&gt;</code> tag. The tag itself is self closing: the ending <code>&gt;</code>
+    is preceded by the <code>/</code> character. </li>
+  <li>The <code>src</code> attribute is used to give URL of the image. If the image is stored
+    in the same directory as the html file then just the image file name is needed. In the 
+    example above, the image is <code>google-150.png</code> and it is stored in a directory
+    named <code>pictures</code>. <strong>Do not ever use this URL to link to an image
+    on a different web site, as it misrepresents ownership and is effectively stealing
+    the other site's bandwidth.</strong></li>
+  <li>The <code>alt</code> attribute is <em>required</em> with every image. If your reader is blind
+    and reading your page using a screen reader, then they will hear the text that is included
+    in quotations following the <code>alt</code>. This text should describe what is in the picture
+    in a way that would make the picture meaningful to someone who is unable to see it.</li>
+  <li>Always specify the <code>width</code> and <code>height</code> of the image. This helps
+    your reader's browser format the page on the screen <em>before</em> the image has been 
+    received from the server.</li>
+</ul>
+<h2>File Sizes and Formats</h2>
+<p>
+There are two image file formats commonly in use today: jpg (or jpeg) and png.
+</p>
+<p>
+The jpeg format is a compressed image format is known as &ldquo;lossy&rdquo;. This means that
+an image saved in jpeg format does <em>not</em> look exactly like the original. With photographs
+the difference is not usually noticable unless the compression is extreme. When you use a 
+piece of software like Photoshop to save a jpeg format file, it will ask you for a quality setting,
+ranging from 1 to 10. Experiment with low quality (which means small file size and high compression)
+to find a setting that is acceptable visually, while having a small file size. The smaller your
+image files, the faster your page will load, and the more likely your visitor is to stick around
+and read or buy something! Note: the jpeg format compression artifacs usually make logos or line
+drawings look pretty ugly, so use png for them.
+</p>
+<p>
+The png format is also a compressed image format, but is &ldquo;lossless&rdquo;. This means
+that an image saved in png format <em>does</em> look exactly like the original and has no 
+compression artifacts or visual defects. It does not compress as well as jpeg, so it is not
+a good choice for photographs. The png format should be used for logos, line drawings or cartoon-
+like graphics. Any image that you create with solid colors and/or sharp outlines should probably
+be stored in the png format.
+</p>
+<p>
+Regardless of which format you choose, be sure to resize and compress the image using a tool
+like Photoshop <em>before</em> you upload it to the web server.
+</p>
+<p>
+  <a href="http://validator.w3.org/check?uri=referer"><img
+    src="http://www.w3.org/Icons/valid-xhtml11" alt="Valid XHTML 1.1" height="31" width="88" /></a>
+</p>
+</body>
+</html>
