@@ -1,5 +1,8 @@
 <?php
 
+require_once('assignmentclass.php');
+require_once('projectdefinitionclass.php');
+
 
 $eliasc = 'eliasc';
 $maxc = 'maxc';
@@ -32,6 +35,19 @@ $accounts = array(
   $hatties,
   $alexisw
   );  
+
+$projects = array(
+  new ProjectDefinition("fbhb", $curtism, array($curtism,$eliasc)),
+  new ProjectDefinition("hanoveroutingclub", $erind, array($erind)),
+  new ProjectDefinition("pjparty", $alexisw, array($alexisw, $monikad)),
+  new ProjectDefinition("visithanover", $sophial, array($sophial)),
+  new ProjectDefinition("encore", $hatties, array($hatties, $emmap)),
+  new ProjectDefinition("iridescent", $clancyn, array($clancyn)),
+  new ProjectDefinition("churchgroup", $asetf, array($asetf,$carlk)),
+  new ProjectDefinition("vocalattack", $ethand, array($ethand)),
+  new ProjectDefinition("magnolia", $maxc, array($maxc))
+  );
+
 
 
 ?>
