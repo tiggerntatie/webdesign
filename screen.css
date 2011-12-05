@@ -34,7 +34,7 @@ table th {
 }
 
 table td {
-  border: 0px solid #eee;
+  border: 0 solid #eee;
   padding: 1em;
   background: #eee;
 }
@@ -55,7 +55,7 @@ table#calendar th {
 }
 
 table#calendar td {
-  border: 0px solid #eee;
+  border: 0 solid #eee;
   padding: 0.5em;
   width: 20%;
   vertical-align: top;
@@ -67,6 +67,15 @@ table#calendar div.date {
   background: #ddd;
   font-family: verdana, sans-serif;
   font-weight: bold;
+}
+
+table#calendar ul {
+    padding-left: 0;
+    margin-left: 1em;
+}
+
+table#calendar li {
+    margin-left: 0;
 }
 
 /* STUDENTWORK table */
