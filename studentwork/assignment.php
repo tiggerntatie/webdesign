@@ -25,7 +25,8 @@ $assignments = array(
   new Project($webdesignurl, $projects, "11/7/2011", "11/8/2011"),
   new WeeklyPlan($webdesignurl, $projects, 1, "11/8/2011", "11/10/2011"),
   new WeeklyPlan($webdesignurl, $projects, 2, "11/10/2011", "11/18/2011"),
-  new WeeklyPlan($webdesignurl, $projects, 3, "11/19/2011", "12/2/2011")
+  new WeeklyPlan($webdesignurl, $projects, 3, "11/19/2011", "12/2/2011"),
+  new WeeklyPlan($webdesignurl, $projects, 4, "12/2/2011", "12/9/2011")
   );
 
 
