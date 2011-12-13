@@ -1,0 +1,109 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+  background-image:url(pictures/htmlshot.png);
+  background-repeat: no-repeat;
+  background-position:top left;
+  background-color: #fff;
+  font-family: georgia, times, serif;
+  font-size: 1.1em;
+}
+
+h2, h3, h4 {
+  color: #f00;
+}
+
+h1 {
+  font-family: helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 2.4em;
+  margin-left: 2em;
+}
+
+h2, h3 {
+  font-family: helvetica, sans-serif;
+  font-weight: bold;
+  font-style: italic;
+}
+
+h3 {
+  font-size: 1.3em;
+}
+
+h2 {
+  font-size: 1.6em
+}
+
+ol li {
+  padding-bottom: 0.5em;
+}
+
+ul.instructions li {
+  padding-bottom: 0.5em;
+}
+
+
+/* LAYOUT CONTAINERS */
+div.logo {
+  background-image: url(http://www.netdenizen.org/org-logo.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 135px;
+  height: 135px; 
+  float: left;
+}
+
+div.title {
+  float: left;
+}
+
+.h-navigation{
+  clear: both;
+  background-color: #fff;
+  padding: 2em;
+}
+
+div.main-sidebar{
+  float: left;
+  width: 25%;
+  padding: 2%;
+  background-color: #fff;
+}
+
+div.main {
+  float: left;
+  width: 50%;
+  min-width: 600px; 
+  padding: 2%;
+  border-left: 2px black solid;
+  background-color: #fff;
+}
+
+div.footer {
+  clear: both;
+  border-top: 2px black solid;
+}
+
+/* HORIZONTAL NAVIGATION */
+ul.h-navigation { 
+  margin: 0;
+  padding: 0.5em;
+}
+
+ul.h-navigation li {
+  display: inline;
+  background-color: #eee;
+  padding: 0.1em 0.3em 0.1em 0.3em;
+}
+
+ul.h-navigation a {
+  text-decoration: none;
+  font-family: verdana, sans-serif;
+}
+
+ul.h-navigation li:hover {
+  background-color: #ccc;
+}
+
+

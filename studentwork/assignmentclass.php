@@ -8,6 +8,7 @@ class Assignment {
     $id=1, 
     $dateassign="", 
     $datedue="") {
+    $this->id = $id;
     $this->webdesignurl = $webdesignurl;
     $this->dateassign=strtotime($dateassign);
     $this->datedue=strtotime($datedue);
@@ -211,7 +212,34 @@ class WeeklyPlan extends ProjectBase  {
     return $searchstr; 
   }
 
-}  /* Project */
+}  /* WeeklyPlan */
+
+class SelfEvaluation extends ProjectBase  {
+
+  function SelfEvaluation(
+    $webdesignurl,
+    $projectslist=array(), /* list of individual projects */
+    $id = 1,
+    $dateassign="",
+    $datedue="") {
+    $this->ProjectBase($webdesignurl, $projectslist, $dateassign, $datedue);
+    $this->name = "S$id";
+    $this->idealid = $id < 10 ? "plan/selfevaluation0{$id}.html" : "plan/selfevaluation{$id}.html";
+    $this->id = $this->matchstr($id);
+    $this->assignurl = "$this->webdesignurl/selfevaluation.html";
+
+  }
+
+  function matchstr ($number) {
+    if ($number > 9) {
+      $searchstr = "*[Ss]elf[Ee]valuation*{$number}.html";
+    } else {
+      $searchstr = "*[Ss]elf[Ee]valuation[^1-9]*{$number}.html";
+    }
+    return $searchstr;
+  }
+
+}  /* SelfEvaluation */
 
 
   
