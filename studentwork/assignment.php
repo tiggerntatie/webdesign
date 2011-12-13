@@ -6,6 +6,8 @@ require_once('accounts.php');
 require_once('assignmentclass.php');
 require_once('projectdefinitionclass.php');
 
+global $projects;
+
 $assignments = array(
   new Challenge($webdesignurl, 2,  "", '9/9/2011'),
   new Challenge($webdesignurl, 3,  "", '9/16/2011'),
