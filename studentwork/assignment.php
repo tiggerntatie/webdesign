@@ -29,9 +29,10 @@ $assignments = array(
   new WeeklyPlan($webdesignurl, $projects, 2, "11/10/2011", "11/18/2011"),
   new WeeklyPlan($webdesignurl, $projects, 3, "11/19/2011", "12/2/2011"),
   new WeeklyPlan($webdesignurl, $projects, 4, "12/2/2011", "12/9/2011"),
-  new SelfEvaluation($webdesignurl, $projects, 1, "12/13/2011", "12/19/2011")
+  new WeeklyPlan($webdesignurl, $projects, 5, "12/9/2011", "12/16/2011"),
+  new SelfEvaluation($webdesignurl, $projects, 1, "12/13/2011", "12/19/2011"),
+  new WeeklyPlan($webdesignurl, $projects, 6, "1/1/2012", "1/6/2012"),
   );
-
 
 
 $rooturl = "http://www.netdenizen.org/u";
