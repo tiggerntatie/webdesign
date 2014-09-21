@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <link rel="stylesheet" href="http://www.netdenizen.com/webdesign/screen.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="../screen.css" type="text/css" media="screen" />
 	<title>HHS Web Design Student Quizzes</title>
 </head>
 <body>
@@ -10,8 +10,8 @@
 
 <h2>Important Links</h2>
 <ul class='navigation'>
-  <li><a href="./index.html">Web Design Home</a></li>
-  <li><a href="./calendar.html">Assignment Calendar</a></li>
+  <li><a href="../index.html">Web Design Home</a></li>
+  <li><a href="../calendar.html">Assignment Calendar</a></li>
 </ul>
 
 <?php
@@ -22,7 +22,7 @@ foreach($challenges as $challenge) {
   echo("<h2>$challenge->name</h2>\n");
   echo("<ul>\n");
   foreach($accounts as $account) {
-    echo("  <li><a href='http://www.netdenizen.org/u/$account/$challenge->id.html'>$account</a></li>\n");
+    echo("  <li><a href='http://www.hhscp.org/u/$account/$challenge->id.html'>$account</a></li>\n");
   }
   echo("</ul>\n\n");
 }

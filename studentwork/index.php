@@ -9,9 +9,9 @@
 <h1>Web Design - Fall 2011 - Student Work</h1>
 
 <ul class='h-navigation'>
-  <li><a href="./index.html">Web Design Home</a></li>
-  <li><a href="./calendar.html">Assignment Calendar</a></li>
-  <li><a href="./studentwork">Student Work</a></li>
+  <li><a href="../index.html">Web Design Home</a></li>
+  <li><a href="../calendar.html">Assignment Calendar</a></li>
+  <li><a href="../studentwork">Student Work</a></li>
 </ul>
 
 <p>
@@ -74,11 +74,11 @@ echo ("<div class='clear'></div>\n");
     </a>
   </p>
   <p>
-    Examine the <a href="view-source:./studentwork/index.php">source HTML</a> used 
+    Examine the <a href="view-source:./index.php">source HTML</a> used 
     by this web page (Firefox or Chrome).
   </p>
   <p>
-    Examine the <a href="./screen.css">CSS </a> used by this web page.
+    Examine the <a href="../screen.css">CSS </a> used by this web page.
   </p>
 
 </body>

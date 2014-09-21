@@ -35,7 +35,7 @@ $assignments = array(
   );
 
 
-$rooturl = "http://www.netdenizen.org/u";
+$rooturl = "http://www.hhscp.org/u";
 $rootpath = "/home/users/";
 
 
