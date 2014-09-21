@@ -1,6 +1,6 @@
 <?php
 
-$webdesignurl = ".";
+$webdesignurl = "..";
 
 require_once('accounts.php');
 require_once('assignmentclass.php');
