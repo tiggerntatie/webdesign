@@ -123,10 +123,10 @@ mysql_close($link);
 <div class="body">
 
 <ul class='h-navigation'>
-  <li><a href="http://www.netdenizen.org/webdesign/index.html">Web Design Home</a></li>
-  <li><a href="http://www.netdenizen.org/webdesign/calendar.html">Assignment Calendar</a></li>
-  <li><a href="http://www.netdenizen.org/webdesign/studentwork">Student Work</a></li>
-  <li><a href="http://www.netdenizen.org/webdesign/challenge8.html">Challenge 8</a></li>
+  <li><a href="./index.html">Web Design Home</a></li>
+  <li><a href="./calendar.html">Assignment Calendar</a></li>
+  <li><a href="./studentwork">Student Work</a></li>
+  <li><a href="./challenge8.html">Challenge 8</a></li>
 </ul>
 
 <h2>Form Results!</h2>
@@ -175,7 +175,7 @@ mysql_close($link);
 ?>
 </table>
 
-<form id="clear-info-form" action="http://www.netdenizen.org/webdesign/challenge8.php" method="post">
+<form id="clear-info-form" action="./challenge8.php" method="post">
   <fieldset>
         <input type='submit' value='Clear List' class="input" name='clear' />
   </fieldset>
@@ -186,7 +186,7 @@ mysql_close($link);
 <div class="footer">
   <h3>About this page...</h3>
   <p>
-    Examine the <a href="http://www.netdenizen.org/webdesign/challenge8source.php">source HTML/PHP</a> used 
+    Examine the <a href="./challenge8source.php">source HTML/PHP</a> used 
     by this web page (all browsers).
   </p>
   <p>

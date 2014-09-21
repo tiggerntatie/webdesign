@@ -10,8 +10,8 @@
 
 <h2>Important Links</h2>
 <ul class='navigation'>
-  <li><a href="http://www.netdenizen.org/webdesign/index.html">Web Design Home</a></li>
-  <li><a href="http://www.netdenizen.org/webdesign/calendar.html">Assignment Calendar</a></li>
+  <li><a href="./index.html">Web Design Home</a></li>
+  <li><a href="./calendar.html">Assignment Calendar</a></li>
 </ul>
 
 <?php

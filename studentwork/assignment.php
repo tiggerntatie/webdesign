@@ -1,6 +1,6 @@
 <?php
 
-$webdesignurl = "http://www.netdenizen.org/webdesign";
+$webdesignurl = ".";
 
 require_once('accounts.php');
 require_once('assignmentclass.php');
