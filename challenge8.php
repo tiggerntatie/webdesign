@@ -14,6 +14,7 @@
 /* the database name that is appropriate for  */
 /* you!                                       */
 /**********************************************/
+die('mysql_connect is deprecated');
 $link = mysql_connect('localhost', 'webdesign99', 'frakshus');
 if (!$link) {
     die('Could not connect: ' . mysql_error());
